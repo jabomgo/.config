@@ -1,0 +1,162 @@
+@define-color bg-bar rgba(0, 0, 0, 0.35);
+@define-color bg-module rgba(18, 18, 18, 0.65);
+@define-color bg-hover rgba(38, 38, 38, 0.82);
+
+@define-color border-color rgba(255,255,255,0.10);
+@define-color border-hover rgba(37,99,235,0.50);
+
+@define-color text-main #FFFFFF;
+@define-color text-muted #A3A3A3;
+
+@define-color primary #2563EB;
+@define-color danger #F43F5E;
+@define-color warning #FBBF24;
+@define-color success #34D399;
+@define-color info #38BDF8;
+@define-color purple #818CF8;
+@define-color accent #C084FC;
+
+* {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    text-shadow: none;
+    min-height: 0;
+
+    font-family: "Inter", "Symbols Nerd Font Mono", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+window#waybar {
+    background: @bg-bar;
+    color: @text-main;
+}
+
+/* Base de todos os módulos */
+#window,
+#workspaces,
+#clock,
+#mpris,
+#network,
+#pulseaudio,
+#battery,
+#tray,
+#custom-wallpaper,
+#custom-power {
+    background: @bg-module;
+    border: 1px solid @border-color;
+    border-radius: 20px;
+    padding: 2px 14px;
+    margin: 4px 0;
+    transition: all 180ms ease;
+}
+
+/* Hover compartilhado */
+#clock:hover,
+#mpris:hover,
+#network:hover,
+#pulseaudio:hover,
+#battery:hover,
+#custom-wallpaper:hover,
+#custom-power:hover,
+#tray:hover {
+    background: @bg-hover;
+    border-color: @border-hover;
+}
+
+/* Workspaces */
+#workspaces {
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 2px 6px;
+    margin: 0px;
+}
+
+#workspaces button {
+    background: transparent;
+    color: @text-muted;
+    border-radius: 7px;
+    margin: 3px 2px;
+    padding: 0 10px;
+    transition: all 180ms ease;
+}
+
+#workspaces button:hover {
+    background: rgba(37,99,235,.20);
+    color: @text-main;
+}
+
+#workspaces button.active {
+    background: @primary;
+    color: @text-main;
+}
+
+#workspaces button.urgent {
+    background: @danger;
+    color: @text-main;
+}
+
+/* Módulos coloridos */
+#clock { color: @text-main; }
+#mpris { color: @info; }
+#mpris.paused { color: @text-muted; }
+
+#network { color: @success; }
+#network.disconnected { color: @danger; }
+
+#pulseaudio { color: @purple; }
+#pulseaudio.muted { color: @text-muted; }
+
+#battery { color: @warning; }
+#battery.charging,
+#battery.plugged { color: @success; }
+
+#custom-wallpaper { color: @accent; }
+
+#custom-power {
+    color: @danger;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 2px 18px 2px 14px;
+}
+
+/* Bateria crítica */
+#battery.critical:not(.charging) {
+    animation: blink .5s linear infinite alternate;
+}
+
+@keyframes blink {
+    to {
+        background: @danger;
+        color: @text-main;
+    }
+}
+
+/* Tooltip */
+tooltip {
+    background: rgba(15,23,42,.95);
+    border: 1px solid @border-color;
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: @text-main;
+    padding: 2px;
+}
+/* Arcos nas pontas (acompanham a curva do módulo) */
+#window, #clock, #mpris, #network, #pulseaudio,
+#battery, #tray, #custom-wallpaper {
+    border-left: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+}
+
+/* Extremidades coladas na borda: arco só no lado que abre pro centro */
+#workspaces   { border-right: 2px solid @primary; }
+#custom-power { border-left: 2px solid @danger; }
+
+/* Janela aparece/some suave ao abrir e fechar */
+#window { transition: opacity 250ms ease; }
+#window.empty { opacity: 0; }

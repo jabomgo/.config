@@ -1,0 +1,106 @@
+{
+  "reload_style_on_change": true,
+  "layer": "bottom",
+  "position": "bottom",
+  "height": 42,
+  "spacing": 5,
+  "modules-left": ["hyprland/workspaces", "clock", "hyprland/window"],
+  "modules-center": ["mpris"],
+  "modules-right": [
+    "network",
+    "pulseaudio",
+    "battery",
+    "tray",
+    "custom/wallpaper",
+    "custom/power"
+  ],
+
+  "hyprland/workspaces": {
+    "all-outputs": false,
+    "show-special": false,
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "urgent": "!",
+      "active": "●",
+      "default": "○"
+    },
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5]
+    }
+  },
+
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 35,
+    "separate-outputs": true
+  },
+
+  "clock": {
+    "format": "<span font_family='Symbols Nerd Font Mono'>\uf017</span>  {:%H:%M  •  %a %b %d}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "on-click": "pkill -x gsimplecal || gsimplecal"
+  },
+
+  "mpris": {
+    "format": "<span font_family='Symbols Nerd Font Mono'>\uf001</span> {artist} - {title}",
+    "format-paused": "<span font_family='Symbols Nerd Font Mono'>\uf04c</span> <i>{artist} - {title}</i>",
+    "tooltip-format": "{player}: {artist} - {title}\nClique: play/pause | Botões laterais: próxima/anterior",
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous",
+    "max-length": 40
+  },
+
+  "network": {
+    "format-wifi": "<span font_family='Symbols Nerd Font Mono'>\uf1eb</span>  {signalStrength}%",
+    "format-ethernet": "<span font_family='Symbols Nerd Font Mono'>\uf796</span>  Ethernet",
+    "format-disconnected": "<span font_family='Symbols Nerd Font Mono'>\uf071</span>  Offline",
+    "tooltip-format-wifi": "{essid}\n{ipaddr} via {gwaddr}\n↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
+    "tooltip-format-ethernet": "{ifname}\n{ipaddr} via {gwaddr}",
+    "on-click": "nm-connection-editor"
+  },
+
+  "pulseaudio": {
+    "format": "<span font_family='Symbols Nerd Font Mono'>{icon}</span>  {volume}%",
+    "format-muted": "<span font_family='Symbols Nerd Font Mono'>\uf026</span>  Mudo",
+    "format-icons": { "default": ["\uf027", "\uf027", "\uf028"] },
+    "tooltip-format": "{desc}\nClique: mixer | Scroll: volume",
+    "on-click": "pkill -x pavucontrol || pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+  },
+
+  "battery": {
+    "states": { "warning": 30, "critical": 15 },
+    "format": "<span font_family='Symbols Nerd Font Mono'>{icon}</span>  {capacity}%",
+    "format-charging": "<span font_family='Symbols Nerd Font Mono'>\uf0e7</span>  {capacity}%",
+    "format-plugged": "<span font_family='Symbols Nerd Font Mono'>\uf1e6</span>  {capacity}%",
+    "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
+    "tooltip-format": "{timeTo}\n{power}W"
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 4,
+    "show-passive-items": false,
+    "ignore": ["nm-applet"]
+  },
+  "custom/wallpaper": {
+    "format": "<span font_family='Symbols Nerd Font Mono'>\uf03e</span>",
+    "tooltip-format": "Wallpaper (Super+Shift+T)",
+    "on-click": "pkill -x waypaper || waypaper"
+  },
+
+  "custom/power": {
+    "format": "<span font_family='Symbols Nerd Font Mono'>\uf011</span>",
+    "tooltip-format": "Menu de energia",
+    "on-click": "wlogout -p layer-shell -b 6 -c 24 -r 24 -L 150 -R 150 -T 380 -B 380"
+  }
+}

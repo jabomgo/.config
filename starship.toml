@@ -1,0 +1,133 @@
+format = """
+$os\
+$username\
+$directory\
+$git_branch\
+$git_status\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$python\
+$docker_context\
+$conda\
+$time\
+$line_break\
+$character"""
+
+palette = "catppuccin"
+
+[palettes.catppuccin]
+bg = "#1E1E2E"
+bg-alt = "#313244"
+text = "#CDD6F4"
+muted = "#A6ADC8"
+primary = "#CBA6F7"
+danger = "#F38BA8"
+warning = "#F9E2AF"
+success = "#A6E3A1"
+info = "#89DCEB"
+purple = "#B4BEFE"
+accent = "#F5C2E7"
+
+[os]
+disabled = false
+style = "fg:primary"
+format = "[$symbol ]($style)"
+
+[os.symbols]
+Arch = "󰣇"
+Fedora = "󰣛"
+Ubuntu = "󰕈"
+Windows = "󰍲"
+Macos = "󰀵"
+
+[username]
+show_always = true
+style_user = "fg:text"
+style_root = "fg:danger"
+format = "[$user]($style) "
+
+[directory]
+style = "fg:info"
+format = "[󰉋 $path]($style) "
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+Documents = "󰈙"
+Downloads = "󰇚"
+Music = "󰝚"
+Pictures = "󰉏"
+Projects = "󰲋"
+
+[git_branch]
+symbol = " "
+style = "fg:primary"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "fg:warning"
+format = "([$all_status$ahead_behind]($style) )"
+
+[nodejs]
+symbol = " "
+style = "fg:success"
+format = "[$symbol$version]($style) "
+
+[c]
+symbol = " "
+style = "fg:info"
+format = "[$symbol$version]($style) "
+
+[rust]
+symbol = " "
+style = "fg:danger"
+format = "[$symbol$version]($style) "
+
+[golang]
+symbol = " "
+style = "fg:info"
+format = "[$symbol$version]($style) "
+
+[php]
+symbol = " "
+style = "fg:purple"
+format = "[$symbol$version]($style) "
+
+[java]
+symbol = " "
+style = "fg:warning"
+format = "[$symbol$version]($style) "
+
+[python]
+symbol = " "
+style = "fg:success"
+format = "[$symbol$version]($style) "
+
+[docker_context]
+symbol = " "
+style = "fg:info"
+format = "[$symbol$context]($style) "
+
+[conda]
+symbol = " "
+style = "fg:success"
+format = "[$symbol$environment]($style) "
+
+[time]
+disabled = false
+time_format = "%R"
+style = "fg:muted"
+format = "[$time]($style) "
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = "[❯](bold fg:primary)"
+error_symbol = "[❯](bold fg:danger)"
+vimcmd_symbol = "[❮](bold fg:success)"

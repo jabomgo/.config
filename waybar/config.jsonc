@@ -101,6 +101,6 @@
   "custom/power": {
     "format": "<span font_family='Symbols Nerd Font Mono'>\uf011</span>",
     "tooltip-format": "Menu de energia",
-    "on-click": "wlogout -p layer-shell -b 6 -c 24 -r 24 -L 150 -R 150 -T 380 -B 380"
+    "on-click": "wlogout"
   }
 }

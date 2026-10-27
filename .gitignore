@@ -16,7 +16,7 @@
 !kitty/
 !kitty/**
 
-!wofi/
-!wofi/**
+!rofi/
+!rofi/**
 
 !starship.toml

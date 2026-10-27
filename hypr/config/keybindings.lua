@@ -4,11 +4,22 @@ hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("pkill -x waypaper || waypaper"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 
-
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(webrowser))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("codium"))
-local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(mainMod .. " + Q", hl.dsp.window.close())
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("wlogout"))
+hl.bind(mainMod .. " + D",
+    hl.dsp.window.fullscreen({
+        mode = "maximized",
+        action = "toggle"
+    })
+)
+hl.bind(mainMod .. " + F",
+    hl.dsp.window.fullscreen({
+        mode = "fullscreen",
+        action = "toggle"
+    })
+)
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))

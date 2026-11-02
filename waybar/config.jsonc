@@ -7,6 +7,7 @@
   "modules-left": ["hyprland/workspaces", "clock", "hyprland/window"],
   "modules-center": ["mpris"],
   "modules-right": [
+    "custom/profile",
     "network",
     "pulseaudio",
     "battery",
@@ -102,5 +103,19 @@
     "format": "<span font_family='Symbols Nerd Font Mono'>\uf011</span>",
     "tooltip-format": "Menu de energia",
     "on-click": "wlogout"
+  },
+
+  "custom/profile": {
+    "exec": "~/.config/waybar/scripts/powerprofile.sh",
+    "return-type": "json",
+    "interval": 30,
+    "signal": 8,
+    "format": "<span font_family='Symbols Nerd Font Mono'>{icon}</span>",
+    "format-icons": {
+      "power-saver": "\uf06c",
+      "balanced": "\uf24e",
+      "performance": "\uf135"
+    },
+    "on-click": "~/.config/waybar/scripts/powerprofile.sh toggle"
   }
 }

@@ -16,20 +16,20 @@
 @define-color accent #F5C2E7;
 
 * {
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-    text-shadow: none;
-    min-height: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+  min-height: 0;
 
-    font-family: "Inter", "Symbols Nerd Font Mono", sans-serif;
-    font-size: 14px;
-    font-weight: 600;
+  font-family: 'Inter', 'Symbols Nerd Font Mono', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 window#waybar {
-    background: @bg-bar;
-    color: @text-main;
+  background: @bg-bar;
+  color: @text-main;
 }
 
 /* Base dos módulos */
@@ -42,13 +42,14 @@ window#waybar {
 #battery,
 #tray,
 #custom-wallpaper,
+#custom-profile,
 #custom-power {
-    background: @bg-module;
-    border: 1px solid transparent;
-    border-radius: 10px;
-    padding: 2px 14px;
-    margin: 8px 0;
-    transition: background 280ms ease;
+  background: @bg-module;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 2px 14px;
+  margin: 8px 0;
+  transition: background 280ms ease;
 }
 
 /* Hover */
@@ -59,135 +60,147 @@ window#waybar {
 #battery:hover,
 #tray:hover,
 #custom-wallpaper:hover,
+#custom-profile:hover,
 #custom-power:hover {
-    background: @bg-hover;
+  background: @bg-hover;
 }
 
 /* Workspaces */
 #workspaces {
-    border-right: 2px solid @primary;
-    border-radius: 0 20px 20px 0;
-    padding: 2px 6px;
-    margin: 0;
+  border-right: 2px solid @primary;
+  border-radius: 0 20px 20px 0;
+  padding: 2px 6px;
+  margin: 0;
 }
 
 #workspaces button {
-    background: transparent;
-    color: @text-muted;
-    border: 1px solid transparent;
-    border-radius: 24px;
-    margin: 3px 2px;
-    padding: 0 10px;
-    transition: background 180ms ease, color 180ms ease;
+  background: transparent;
+  color: @text-muted;
+  border: 1px solid transparent;
+  border-radius: 24px;
+  margin: 3px 2px;
+  padding: 0 10px;
+  transition: background 180ms ease, color 180ms ease;
 }
 
 #workspaces button:hover {
-    background: rgba(37, 99, 235, 0.2);
-    color: @text-main;
+  background: rgba(37, 99, 235, 0.2);
+  color: @text-main;
 }
 
 #workspaces button.active {
-    background: @primary;
-    color: @text-main;
+  background: @primary;
+  color: @text-main;
 }
 
 #workspaces button.urgent {
-    background: @danger;
-    color: @text-main;
+  background: @danger;
+  color: @text-main;
 }
 
 /* Cores dos módulos */
 #clock {
-    color: @text-main;
+  color: @text-main;
+  padding: 2px 16px;
 }
 
 #mpris {
-    color: @info;
+  color: @info;
 }
 
 #mpris.paused {
-    color: @text-muted;
+  color: @text-muted;
 }
 
 #network {
-    color: @success;
+  color: @success;
 }
 
 #network.disconnected {
-    color: @danger;
+  color: @danger;
 }
 
 #pulseaudio {
-    color: @purple;
+  color: @purple;
 }
 
 #pulseaudio.muted {
-    color: @text-muted;
+  color: @text-muted;
 }
 
 #battery {
-    color: @warning;
+  color: @warning;
 }
 
 #battery.charging,
 #battery.plugged {
-    color: @success;
+  color: @success;
 }
 
 #custom-wallpaper {
-    color: @accent;
+  color: @accent;
+}
+
+#custom-profile.power-saver {
+  color: @success;
+}
+#custom-profile.balanced {
+  color: @info;
+}
+#custom-profile.performance {
+  color: @danger;
 }
 
 #custom-power {
-    color: @danger;
-    border-left: 2px solid @danger;
-    border-radius: 20px 0 0 20px;
-    margin: 0;
-    padding-right: 25px;
+  color: @danger;
+  border-left: 2px solid @danger;
+  border-radius: 20px 0 0 20px;
+  margin: 0;
+  padding-right: 25px;
 }
 
 /* Animação da borda */
 @keyframes border-spin {
-    0% {
-        border-top-color: @primary;
-        border-right-color: @accent;
-        border-bottom-color: @info;
-        border-left-color: @success;
-    }
+  0% {
+    border-top-color: @primary;
+    border-right-color: @accent;
+    border-bottom-color: @info;
+    border-left-color: @success;
+  }
 
-    25% {
-        border-top-color: @success;
-        border-right-color: @primary;
-        border-bottom-color: @accent;
-        border-left-color: @info;
-    }
+  25% {
+    border-top-color: @success;
+    border-right-color: @primary;
+    border-bottom-color: @accent;
+    border-left-color: @info;
+  }
 
-    50% {
-        border-top-color: @info;
-        border-right-color: @success;
-        border-bottom-color: @primary;
-        border-left-color: @accent;
-    }
+  50% {
+    border-top-color: @info;
+    border-right-color: @success;
+    border-bottom-color: @primary;
+    border-left-color: @accent;
+  }
 
-    75% {
-        border-top-color: @accent;
-        border-right-color: @info;
-        border-bottom-color: @success;
-        border-left-color: @primary;
-    }
+  75% {
+    border-top-color: @accent;
+    border-right-color: @info;
+    border-bottom-color: @success;
+    border-left-color: @primary;
+  }
 
-    100% {
-        border-top-color: @primary;
-        border-right-color: @accent;
-        border-bottom-color: @info;
-        border-left-color: @success;
-    }
+  100% {
+    border-top-color: @primary;
+    border-right-color: @accent;
+    border-bottom-color: @info;
+    border-left-color: @success;
+  }
 }
 
 /* MPRIS: animação contínua enquanto toca */
 #mpris.playing {
-    border: 0.3px solid @primary;
-    animation: border-spin 1.2s linear infinite;
+  border: 0.3px solid @primary;
+  animation: border-spin 1.2s linear infinite;
 }
 
 /* Hover animado nos módulos */
@@ -198,39 +211,40 @@ window#waybar {
 #battery:hover,
 #tray:hover,
 #custom-wallpaper:hover,
+#custom-profile:hover,
 #custom-power:hover {
-    animation: border-spin 1s linear infinite;
+  animation: border-spin 1s linear infinite;
 }
 
 /* Bateria crítica */
 #battery.critical:not(.charging) {
-    animation: blink 0.5s linear infinite alternate;
+  animation: blink 0.5s linear infinite alternate;
 }
 
 @keyframes blink {
-    to {
-        background: @danger;
-        color: @text-main;
-    }
+  to {
+    background: @danger;
+    color: @text-main;
+  }
 }
 
 /* Janela ativa */
 #window {
-    transition: opacity 250ms ease;
+  transition: opacity 250ms ease;
 }
 
 #window.empty {
-    opacity: 0;
+  opacity: 0;
 }
 
 /* Tooltip */
 tooltip {
-    background: rgba(15, 23, 42, 0.95);
-    border: 1px solid @border-color;
-    border-radius: 8px;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid @border-color;
+  border-radius: 8px;
 }
 
 tooltip label {
-    color: @text-main;
-    padding: 2px;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    padding: 6px 10px;
 }

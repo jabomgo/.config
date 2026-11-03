@@ -1,0 +1,13 @@
+@define-color bg-bar rgba(17, 17, 27, 0.85);
+@define-color bg-module rgba(30, 30, 46, 0.85);
+@define-color bg-hover rgba(49, 50, 68, 0.88);
+@define-color border-color rgba(205, 214, 244, 0.10);
+@define-color text-main #CDD6F4;
+@define-color text-muted #A6ADC8;
+@define-color primary #CBA6F7;
+@define-color danger #F38BA8;
+@define-color warning #F9E2AF;
+@define-color success #A6E3A1;
+@define-color info #89DCEB;
+@define-color purple #B4BEFE;
+@define-color accent #F5C2E7;

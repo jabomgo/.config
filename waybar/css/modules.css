@@ -1,0 +1,154 @@
+/* Base dos módulos */
+#window,
+#workspaces,
+#clock,
+#mpris,
+#network,
+#pulseaudio,
+#battery,
+#tray,
+#custom-wallpaper,
+#custom-profile,
+#backlight,
+#extras,
+#custom-power {
+  background: @bg-module;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 2px 14px;
+  margin: 8px 0;
+  transition: background 280ms ease;
+}
+
+/* Módulos dentro da gaveta */
+#extras #custom-drawer,
+#extras #tray,
+#extras #custom-profile,
+#extras #custom-wallpaper {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0 6px;
+  margin: 0;
+  animation: none;
+}
+
+#custom-drawer {
+  color: @text-muted;
+}
+
+#extras:hover #custom-drawer {
+  color: @text-main;
+}
+
+/* Hover padrão */
+#clock:hover,
+#mpris:hover,
+#network:hover,
+#pulseaudio:hover,
+#battery:hover,
+#tray:hover,
+#custom-wallpaper:hover,
+#backlight:hover,
+#custom-profile:hover,
+#custom-power:hover {
+  background: @bg-hover;
+}
+
+/* Workspaces */
+#workspaces {
+  border-right: 2px solid @primary;
+  border-radius: 0 20px 20px 0;
+  padding: 2px 6px;
+  margin: 0;
+}
+
+#workspaces button {
+  background: transparent;
+  color: @text-muted;
+  border: 1px solid transparent;
+  border-radius: 24px;
+  margin: 3px 2px;
+  padding: 0 10px;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+#workspaces button:hover {
+  background: rgba(37, 99, 235, 0.2);
+  color: @text-main;
+}
+
+#workspaces button.active {
+  background: @primary;
+  color: @text-main;
+}
+
+#workspaces button.urgent {
+  background: @danger;
+  color: @text-main;
+}
+
+/* Cores específicas dos módulos */
+#clock {
+  color: @text-main;
+  padding: 2px 16px;
+}
+
+#mpris {
+  color: @info;
+}
+
+#mpris.paused {
+  color: @text-muted;
+}
+
+#network {
+  color: @success;
+}
+
+#network.disconnected {
+  color: @danger;
+}
+
+#pulseaudio {
+  color: @purple;
+}
+
+#pulseaudio.muted {
+  color: @text-muted;
+}
+
+#battery {
+  color: @warning;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: @success;
+}
+
+#battery.critical:not(.charging) {
+  animation: blink 0.5s linear infinite alternate;
+}
+
+#custom-wallpaper {
+  color: @accent;
+}
+
+#custom-profile.power-saver {
+  color: @success;
+}
+#custom-profile.balanced {
+  color: @info;
+}
+#custom-profile.performance {
+  color: @danger;
+}
+
+#custom-power {
+  color: @danger;
+  border-left: 2px solid @danger;
+  border-radius: 20px 0 0 20px;
+  margin: 0;
+  padding-right: 25px;
+}

@@ -14,131 +14,20 @@
     "battery",
     "custom/power"
   ],
-
-  "group/extras": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 300,
-      "transition-left-to-right": false,
-      "click-to-reveal": false,
-      "children-class": "drawer-child"
-    },
-    "modules": ["custom/drawer", "tray", "custom/profile", "custom/wallpaper"]
-  },
-
-  "custom/drawer": {
-    "format": "<span font_family='Symbols Nerd Font Mono'>\uf053</span>",
-    "tooltip": false
-  },
-
-  "hyprland/workspaces": {
-    "all-outputs": false,
-    "show-special": false,
-    "on-click": "activate",
-    "format": "{icon}",
-    "format-icons": {
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "urgent": "!",
-      "active": "●",
-      "default": "○"
-    },
-    "persistent-workspaces": {
-      "*": [1, 2, 3, 4, 5]
-    }
-  },
-
-  "backlight": {
-    "format": "<span font_family='Symbols Nerd Font Mono'>\uf185</span>  {percent}%",
-    "tooltip-format": "Brilho: {percent}%\nScroll: ajustar",
-    "scroll-step": 5,
-    "smooth-scrolling-threshold": 1,
-    "reverse-scrolling": false
-  },
-
-  "hyprland/window": {
-    "format": "{title}",
-    "max-length": 35,
-    "separate-outputs": true
-  },
-
-  "clock": {
-    "format": "<span font_family='Symbols Nerd Font Mono'>\uf017</span>  {:%H:%M  •  %a %b %d}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "on-click": "pkill -x gsimplecal || gsimplecal"
-  },
-
-  "mpris": {
-    "format": "<span font_family='Symbols Nerd Font Mono'>\uf001</span> {artist} - {title}",
-    "format-paused": "<span font_family='Symbols Nerd Font Mono'>\uf04c</span> <i>{artist} - {title}</i>",
-    "tooltip-format": "{player}: {artist} - {title}\nClique: play/pause | Botões laterais: próxima/anterior",
-    "on-click": "playerctl play-pause",
-    "on-click-right": "playerctl next",
-    "on-click-middle": "playerctl previous",
-    "max-length": 40
-  },
-
-  "network": {
-    "format-wifi": "<span font_family='Symbols Nerd Font Mono'>\uf1eb</span>  {signalStrength}%",
-    "format-ethernet": "<span font_family='Symbols Nerd Font Mono'>\uf796</span>  Ethernet",
-    "format-disconnected": "<span font_family='Symbols Nerd Font Mono'>\uf071</span>  Offline",
-    "tooltip-format-wifi": "{essid}\n{ipaddr} via {gwaddr}\n↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
-    "tooltip-format-ethernet": "{ifname}\n{ipaddr} via {gwaddr}",
-    "on-click": "nm-connection-editor"
-  },
-
-  "pulseaudio": {
-    "format": "<span font_family='Symbols Nerd Font Mono'>{icon}</span>  {volume}%",
-    "format-muted": "<span font_family='Symbols Nerd Font Mono'>\uf026</span>  Mudo",
-    "format-icons": { "default": ["\uf027", "\uf027", "\uf028"] },
-    "tooltip-format": "{desc}\nClique: mixer | Scroll: volume",
-    "on-click": "pkill -x pavucontrol || pavucontrol",
-    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-  },
-
-  "battery": {
-    "states": { "warning": 30, "critical": 15 },
-    "format": "<span font_family='Symbols Nerd Font Mono'>{icon}</span>  {capacity}%",
-    "format-charging": "<span font_family='Symbols Nerd Font Mono'>\uf0e7</span>  {capacity}%",
-    "format-plugged": "<span font_family='Symbols Nerd Font Mono'>\uf1e6</span>  {capacity}%",
-    "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
-    "tooltip-format": "{timeTo}\n{power}W"
-  },
-
-  "tray": {
-    "icon-size": 16,
-    "spacing": 4,
-    "show-passive-items": false,
-    "ignore": ["nm-applet"]
-  },
-  "custom/wallpaper": {
-    "format": "<span font_family='Symbols Nerd Font Mono'>\uf03e</span>",
-    "tooltip-format": "Wallpaper (Super+Shift+T)",
-    "on-click": "pkill -x waypaper || waypaper"
-  },
-
-  "custom/power": {
-    "format": "<span font_family='Symbols Nerd Font Mono'>\uf011</span>",
-    "tooltip-format": "Menu de energia",
-    "on-click": "wlogout"
-  },
-
-  "custom/profile": {
-    "exec": "~/.config/waybar/scripts/powerprofile.sh",
-    "return-type": "json",
-    "interval": 30,
-    "signal": 8,
-    "format": "<span font_family='Symbols Nerd Font Mono'>{icon}</span>",
-    "format-icons": {
-      "power-saver": "\uf06c",
-      "balanced": "\uf24e",
-      "performance": "\uf135"
-    },
-    "on-click": "~/.config/waybar/scripts/powerprofile.sh toggle"
-  }
+  "include": [
+    "~/.config/waybar/modules/extras.jsonc",
+    "~/.config/waybar/modules/drawer.jsonc",
+    "~/.config/waybar/modules/workspaces.jsonc",
+    "~/.config/waybar/modules/backlight.jsonc",
+    "~/.config/waybar/modules/window.jsonc",
+    "~/.config/waybar/modules/clock.jsonc",
+    "~/.config/waybar/modules/mpris.jsonc",
+    "~/.config/waybar/modules/network.jsonc",
+    "~/.config/waybar/modules/pulseaudio.jsonc",
+    "~/.config/waybar/modules/battery.jsonc",
+    "~/.config/waybar/modules/tray.jsonc",
+    "~/.config/waybar/modules/wallpaper.jsonc",
+    "~/.config/waybar/modules/power.jsonc",
+    "~/.config/waybar/modules/profile.jsonc"
+  ]
 }

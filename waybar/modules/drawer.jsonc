@@ -1,0 +1,6 @@
+{
+  "custom/drawer": {
+    "format": "<span font_family='Symbols Nerd Font Mono'>\uf053</span>",
+    "tooltip": false
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "custom/wallpaper": {
+    "format": "<span font_family='Symbols Nerd Font Mono'>\uf03e</span>",
+    "tooltip-format": "Wallpaper (Super+Shift+T)",
+    "on-click": "pkill -x waypaper || waypaper"
+  }
+}

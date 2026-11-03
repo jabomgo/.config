@@ -1,0 +1,9 @@
+{
+  "backlight": {
+    "format": "<span font_family='Symbols Nerd Font Mono'>\uf185</span>  {percent}%",
+    "tooltip-format": "Brilho: {percent}%\nScroll: ajustar",
+    "scroll-step": 5,
+    "smooth-scrolling-threshold": 1,
+    "reverse-scrolling": false
+  }
+}

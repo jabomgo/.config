@@ -1,0 +1,10 @@
+{
+  "network": {
+    "format-wifi": "<span font_family='Symbols Nerd Font Mono'>\uf1eb</span>  {signalStrength}%",
+    "format-ethernet": "<span font_family='Symbols Nerd Font Mono'>\uf796</span>  Ethernet",
+    "format-disconnected": "<span font_family='Symbols Nerd Font Mono'>\uf071</span>  Offline",
+    "tooltip-format-wifi": "{essid}\n{ipaddr} via {gwaddr}\n↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
+    "tooltip-format-ethernet": "{ifname}\n{ipaddr} via {gwaddr}",
+    "on-click": "nm-connection-editor"
+  }
+}

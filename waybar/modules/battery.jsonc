@@ -1,0 +1,10 @@
+{
+  "battery": {
+    "states": { "warning": 30, "critical": 15 },
+    "format": "<span font_family='Symbols Nerd Font Mono'>{icon}</span>  {capacity}%",
+    "format-charging": "<span font_family='Symbols Nerd Font Mono'>\uf0e7</span>  {capacity}%",
+    "format-plugged": "<span font_family='Symbols Nerd Font Mono'>\uf1e6</span>  {capacity}%",
+    "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
+    "tooltip-format": "{timeTo}\n{power}W"
+  }
+}

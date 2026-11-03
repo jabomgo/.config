@@ -1,0 +1,57 @@
+@keyframes border-spin {
+  0% {
+    border-top-color: @primary;
+    border-right-color: @accent;
+    border-bottom-color: @info;
+    border-left-color: @success;
+  }
+  25% {
+    border-top-color: @success;
+    border-right-color: @primary;
+    border-bottom-color: @accent;
+    border-left-color: @info;
+  }
+  50% {
+    border-top-color: @info;
+    border-right-color: @success;
+    border-bottom-color: @primary;
+    border-left-color: @accent;
+  }
+  75% {
+    border-top-color: @accent;
+    border-right-color: @info;
+    border-bottom-color: @success;
+    border-left-color: @primary;
+  }
+  100% {
+    border-top-color: @primary;
+    border-right-color: @accent;
+    border-bottom-color: @info;
+    border-left-color: @success;
+  }
+}
+
+#mpris.playing {
+  border: 0.3px solid @primary;
+  animation: border-spin 1.2s linear infinite;
+}
+
+#clock:hover,
+#mpris:hover,
+#network:hover,
+#pulseaudio:hover,
+#battery:hover,
+#tray:hover,
+#custom-wallpaper:hover,
+#custom-profile:hover,
+#backlight:hover,
+#custom-power:hover {
+  animation: border-spin 1s linear infinite;
+}
+
+@keyframes blink {
+  to {
+    background: @danger;
+    color: @text-main;
+  }
+}

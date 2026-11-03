@@ -1,0 +1,12 @@
+{
+  "group/extras": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "transition-left-to-right": false,
+      "click-to-reveal": false,
+      "children-class": "drawer-child"
+    },
+    "modules": ["custom/drawer", "tray", "custom/profile", "custom/wallpaper"]
+  }
+}

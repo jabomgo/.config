@@ -1,0 +1,8 @@
+{
+  "tray": {
+    "icon-size": 16,
+    "spacing": 4,
+    "show-passive-items": false,
+    "ignore": ["nm-applet"]
+  }
+}

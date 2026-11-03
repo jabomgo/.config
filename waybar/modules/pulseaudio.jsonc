@@ -1,0 +1,12 @@
+{
+  "pulseaudio": {
+    "format": "<span font_family='Symbols Nerd Font Mono'>{icon}</span>  {volume}%",
+    "format-muted": "<span font_family='Symbols Nerd Font Mono'>\uf026</span>  Mudo",
+    "format-icons": { "default": ["\uf027", "\uf027", "\uf028"] },
+    "tooltip-format": "{desc}\nClique: mixer | Scroll: volume",
+    "on-click": "pkill -x pavucontrol || pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+  }
+}

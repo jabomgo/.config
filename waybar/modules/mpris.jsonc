@@ -1,0 +1,11 @@
+{
+  "mpris": {
+    "format": "<span font_family='Symbols Nerd Font Mono'>\uf001</span> {artist} - {title}",
+    "format-paused": "<span font_family='Symbols Nerd Font Mono'>\uf04c</span> <i>{artist} - {title}</i>",
+    "tooltip-format": "{player}: {artist} - {title}\nClique: play/pause | Botões laterais: próxima/anterior",
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous",
+    "max-length": 40
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "clock": {
+    "format": "<span font_family='Symbols Nerd Font Mono'>\uf017</span>  {:%H:%M  •  %a %b %d}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "on-click": "pkill -x gsimplecal || gsimplecal"
+  }
+}

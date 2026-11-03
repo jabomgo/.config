@@ -1,0 +1,15 @@
+{
+  "custom/profile": {
+    "exec": "~/.config/waybar/scripts/powerprofile.sh",
+    "return-type": "json",
+    "interval": 30,
+    "signal": 8,
+    "format": "<span font_family='Symbols Nerd Font Mono'>{icon}</span>",
+    "format-icons": {
+      "power-saver": "\uf06c",
+      "balanced": "\uf24e",
+      "performance": "\uf135"
+    },
+    "on-click": "~/.config/waybar/scripts/powerprofile.sh toggle"
+  }
+}

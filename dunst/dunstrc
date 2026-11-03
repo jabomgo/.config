@@ -1,0 +1,73 @@
+
+[global]
+    # Layout
+    width = 380
+    height = 180
+    origin = top-right
+    offset = (40, 40)
+    notification_limit = 5
+
+    # Aparência
+    corner_radius = 12
+    frame_width = 1
+    frame_color = "#FFFFFF60"
+    gap_size = 20
+    
+    # Cores
+    background = "#000000"
+    foreground = "#FFFFFF"
+    highlight = "#FFFFFF"
+
+    # Fonte
+    font = "JetBrainsMono Nerd Font 12"
+    markup = full
+
+    # Texto
+    format = "<span size='small' alpha='65%'>%a</span>\n<b>%s</b>\n<span alpha='75%'>%b</span>"
+    alignment = left
+    vertical_alignment = center
+    word_wrap = yes
+    ellipsize = end
+
+    # Espaçamento
+    padding = 14
+    horizontal_padding = 16
+    text_icon_padding = 12
+    line_height = 4
+
+    # Ícones
+    icon_position = left
+    max_icon_size = 38
+
+    # Comportamento
+    indicate_hidden = yes
+    separator_height = 0
+    sort = yes
+    stack_duplicates = true
+    show_indicators = no
+    sticky_history = yes
+
+    # Transparência e monitor
+    follow = none
+
+    # Tempo padrão
+    timeout = 5
+    ignore_newline = no
+
+[urgency_low]
+    background = "#0A0A0ACC"
+    foreground = "#C8C8C8"
+    frame_color = "#FFFFFF35"
+    timeout = 3
+
+[urgency_normal]
+    background = "#0A0A0ACC"
+    foreground = "#FFFFFF"
+    frame_color = "#FFFFFF60"
+    timeout = 5
+
+[urgency_critical]
+    background = "#0A0A0AEE"
+    foreground = "#FFFFFF"
+    frame_color = "#CC4444"
+    timeout = 0

@@ -20,3 +20,6 @@
 !rofi/**
 
 !starship.toml
+
+!dunst/
+!dunst/**

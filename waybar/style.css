@@ -43,6 +43,8 @@ window#waybar {
 #tray,
 #custom-wallpaper,
 #custom-profile,
+#backlight,
+#extras,
 #custom-power {
   background: @bg-module;
   border: 1px solid transparent;
@@ -50,6 +52,27 @@ window#waybar {
   padding: 2px 14px;
   margin: 8px 0;
   transition: background 280ms ease;
+}
+
+/* Módulos dentro da gaveta: sem caixa própria */
+#extras #custom-drawer,
+#extras #tray,
+#extras #custom-profile,
+#extras #custom-wallpaper {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0 6px;
+  margin: 0;
+  animation: none;
+}
+
+#custom-drawer {
+  color: @text-muted;
+}
+
+#extras:hover #custom-drawer {
+  color: @text-main;
 }
 
 /* Hover */
@@ -60,6 +83,7 @@ window#waybar {
 #battery:hover,
 #tray:hover,
 #custom-wallpaper:hover,
+#backlight:hover,
 #custom-profile:hover,
 #custom-power:hover {
   background: @bg-hover;
@@ -212,6 +236,7 @@ window#waybar {
 #tray:hover,
 #custom-wallpaper:hover,
 #custom-profile:hover,
+#backlight:hover,
 #custom-power:hover {
   animation: border-spin 1s linear infinite;
 }
@@ -245,6 +270,6 @@ tooltip {
 }
 
 tooltip label {
-    font-family: "JetBrainsMono Nerd Font", monospace;
-    padding: 6px 10px;
+  font-family: 'JetBrainsMono Nerd Font', monospace;
+  padding: 6px 10px;
 }

@@ -18,6 +18,11 @@ hl.gesture({
 })
 
 hl.device({
+    name        = "yjx-chip-usb-receiver-mouse",
+    sensitivity = -0.9,
+})
+
+hl.device({
     name        = "mouse-m3-1-mouse",
     sensitivity = -0.9,
 })

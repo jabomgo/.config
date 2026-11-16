@@ -1,52 +1,11 @@
-@keyframes border-spin {
-  0% {
-    border-top-color: @primary;
-    border-right-color: @accent;
-    border-bottom-color: @info;
-    border-left-color: @success;
+/* ========== Animações ========== */
+@keyframes pulse-border {
+  from {
+    border-color: alpha(@primary, 0.3);
   }
-  25% {
-    border-top-color: @success;
-    border-right-color: @primary;
-    border-bottom-color: @accent;
-    border-left-color: @info;
+  to {
+    border-color: @primary;
   }
-  50% {
-    border-top-color: @info;
-    border-right-color: @success;
-    border-bottom-color: @primary;
-    border-left-color: @accent;
-  }
-  75% {
-    border-top-color: @accent;
-    border-right-color: @info;
-    border-bottom-color: @success;
-    border-left-color: @primary;
-  }
-  100% {
-    border-top-color: @primary;
-    border-right-color: @accent;
-    border-bottom-color: @info;
-    border-left-color: @success;
-  }
-}
-
-#mpris.playing {
-  border: 0.3px solid @primary;
-  animation: border-spin 1.2s linear infinite;
-}
-
-#clock:hover,
-#mpris:hover,
-#network:hover,
-#pulseaudio:hover,
-#battery:hover,
-#tray:hover,
-#custom-wallpaper:hover,
-#custom-profile:hover,
-#backlight:hover,
-#custom-power:hover {
-  animation: border-spin 1s linear infinite;
 }
 
 @keyframes blink {
@@ -54,4 +13,31 @@
     background: @danger;
     color: @text-main;
   }
+}
+
+/* Mídia tocando: borda pulsando */
+#mpris.playing {
+  border: 1px solid @primary;
+  animation: pulse-border 1.6s ease-in-out infinite alternate;
+}
+
+/* Bateria crítica */
+#battery.critical:not(.charging) {
+  animation: blink 0.8s ease-in-out infinite alternate;
+}
+
+/* Hover: só acende a borda, sem animação infinita */
+#clock:hover,
+#mpris:hover,
+#network:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#battery:hover,
+#tray:hover,
+#custom-wallpaper:hover,
+#custom-profile:hover,
+#custom-power:hover,
+#extras:hover {
+  background: @bg-hover;
+  border-color: @primary;
 }

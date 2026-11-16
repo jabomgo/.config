@@ -31,3 +31,6 @@ if status is-interactive
         alias ssh 'kitten ssh'
     end
 end
+
+# Created by `pipx` on 2026-11-07 05:50:53
+set PATH $PATH /home/jonathan/.local/bin

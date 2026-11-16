@@ -1,0 +1,11 @@
+#!/bin/sh
+while read -r file; do
+  case "$1" in
+    "w")
+      abs_file=$(realpath "$file")
+      ln -sf "$abs_file" "$HOME/.current_wallpaper"
+      hyprctl hyprpaper wallpaper ",$abs_file"
+      kill -TERM "$PPID"
+      ;;
+  esac
+done

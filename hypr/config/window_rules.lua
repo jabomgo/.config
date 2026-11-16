@@ -43,10 +43,13 @@ hl.layer_rule({
     blur = true,
 })
 
-hl.window_rule({ name = "popup-waypaper", match = { class = "^waypaper$" }, float = true, center = true, size = { 900, 600 } })
-popup("^org.pulseaudio.pavucontrol$", "700", "450", "monitor_w-window_w-12", "46")
-popup("^nm-connection-editor$", "520", "420", "monitor_w-window_w-12", "46")
-popup("^gsimplecal$", "260", "240", "(monitor_w-window_w)/2", "46")
+hl.window_rule({
+    name   = "popup-nsxiv",
+    match  = { class = "^Nsxiv$" },
+    float  = true,
+    center = true,
+    size   = { 900, 600 },
+})
 
 -- Kitty: opaco quando focado, levemente transparente quando não
 hl.window_rule({ name = "kitty-inactive-opacity", match = { class = "^kitty$" }, opacity = "0.95 0.80" })
